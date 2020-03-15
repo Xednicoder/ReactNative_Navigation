@@ -1,5 +1,5 @@
 export const BG_COLOR = "black";
-export const WHITE = "white";
+export const TINT_COLOR = "white";
 export const GREY_COLOR = "#bdc3c7";
-export const INACTIVE_COLOR = "pink";
-export const ACTIVE_COLOR = "#ff5460";
+export const INACTIVE_COLOR = "gray";
+export const ACTIVE_COLOR = "white";

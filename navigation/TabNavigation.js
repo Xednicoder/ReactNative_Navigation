@@ -6,24 +6,26 @@ import ModelScreen from "../screens/Models";
 import SerchScreen from "../screens/Search";
 import TabBarIcon from "../components/TabBarIcon";
 import { BG_COLOR } from "../constants/Colors";
+import { createStack } from "./config";
+
 
 const TabNavigation = createBottomTabNavigator({
     STUDIO: {
-        screen: createStackNavigator({ Studio: {screen: StudioScreen, navigationOptions: {tittle: 'Studios'}} }),
+        screen: createStack(StudioScreen, "Studio"),
         navigationOptions: {
             tabBarIcon: ({ focused }) => (
                 <TabBarIcon focused={focused} name={Platform.OS === "ios" ? "ios-camera" : "md-camera"} />)
         }
     },
     MODEL: {
-        screen: createStackNavigator({ ModelScreen }),
+        screen: createStack(ModelScreen, "Model"),
         navigationOptions: {
             tabBarIcon: ({ focused }) => (
                 <TabBarIcon focused={focused} name={Platform.OS === "ios" ? "ios-woman" : "md-woman"} />)
         }
     },
     SERCH: {
-                screen: createStackNavigator({ SerchScreen }),
+        screen: createStack(SerchScreen, "Serch"),
         navigationOptions: {
             tabBarIcon: ({ focused }) => (
                 <TabBarIcon focused={focused} name={Platform.OS === "ios" ? "ios-search" : "md-search"} />)
@@ -33,8 +35,8 @@ const TabNavigation = createBottomTabNavigator({
     {
         tabBarOptions: {
             showLabel: false,
-            Style: {
-                background: BG_COLOR
+            style: {
+                backgroundColor: BG_COLOR
             }
         }
 
